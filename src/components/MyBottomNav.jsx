@@ -22,16 +22,16 @@ export const MyBottomNav =()=> {
   }
 
   return (
-    <Box sx={{ maxWidth:"650px", position:"fixed", bottom:0 }}>
+    <Box sx={{ width:"100%", position:"fixed", bottom:0 ,boxShadow:"1rem"}}>
       <BottomNavigation
         showLabels
         value={value}
         onChange={handleChange}
-        sx={ {border:"#2563eb 5px solid", borderRadius:"5px"}}
+        sx={ { borderRadius:"5px",bgcolor:"#312e81", color:"white"}}
       >
-        <BottomNavigationAction label="Movies" icon={<MdMovie />} />
-        <BottomNavigationAction label="TV Series" icon={<IoTv />} />
-        <BottomNavigationAction label="Search" icon={<IoSearch />} />
+        <BottomNavigationAction   label="Movies" icon={<MdMovie />} />
+        <BottomNavigationAction  label="TV Series" icon={<IoTv />} />
+        <BottomNavigationAction  label="Search" icon={<IoSearch />} />
       </BottomNavigation>
     </Box>
   );

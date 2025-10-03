@@ -1,7 +1,12 @@
 import React from 'react'
+import { PageLayout } from '../components/PageLayout'
+import Grid from '@mui/material/Grid'
 
 export const SearchPage = () => {
   return (
-    <div>SearchPage</div>
-  )
+    <PageLayout title="SearchPage">
+        <Grid>
+            {"adatok"}
+        </Grid>
+    </PageLayout>  )
 }
