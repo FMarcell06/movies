@@ -2,17 +2,21 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import React from "react";
+import { ContentPagination } from "./ContentPagination";
 
-export const PageLayout = ({ title, children }) => {
+export const PageLayout = ({ title, children,page,setPage}) => {
   return (
     <Container
       maxWidth={false}
-      sx={{ background: "linear-gradient(to right, #0f172a,#4f46e5)",minHeight:"100vh" }}
+      sx={{ background: "whitesmoke",minHeight:"100vh" }}
     >
       <Typography variant="h3" sx={{textTransform:"uppercase",color:"white",fontWeight:"bold",letterSpacing:2,textAlign:"center",
-        background:"linear-gradient(to right, #596d9eff, #9c98dfff)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",p:"1rem"
+        background:"linear-gradient(to right, #93a3cdff, #21c37aff)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",p:"1rem"
       }}>{title}</Typography>
       <Box>{children}</Box>
+      <Box display="flex" justifyContent="center" sx={{paddingBottom:"70px", paddingTop:"20px" }}>
+        <ContentPagination page={page} setPage={setPage}/>
+      </Box>
     </Container>
   );
 };

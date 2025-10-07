@@ -7,3 +7,95 @@
 .css-1scjuq2-MuiButtonBase-root-MuiBottomNavigationAction-root.Mui-selected{
     color: white !important;
 }
+
+.mCard{
+  transform-origin: bottom center; /* pivot from bottom edge */
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
+    position: relative;        /* needed for pseudo-element positioning */
+  overflow: hidden;          /* ensure border doesn’t overflow */
+  border-radius: 10rem; 
+}
+
+.mCard::before,
+.mCard::after {
+  content: "";
+  position: absolute;
+  height: 2px;               /* border thickness */
+  background: #818cf8;       /* border color */
+  width: 0;                   /* start collapsed at center */
+  left: 50%;                  /* center horizontally */
+  transition: width 0.5s ease;
+  transform: translateX(-50%);
+}
+
+.mCard:hover{
+    scale: 1.1;
+    transition: 0.3s;
+  transform: rotateX(15deg); /* tilts top back, lifts bottom */
+  box-shadow: 0 30px 45px rgba(0,0,0,0.25);
+}
+
+
+.mCard::before {
+  top: 0; /* top border */
+  transform: translateX(-50%);
+}
+
+.mCard::after {
+  bottom: 0; /* bottom border */
+  transform: translateX(-50%);
+}
+
+/* Hover: expand lines outward */
+.mCard:hover::before,
+.mCard:hover::after {
+  width: 110%; /* expand to full width */
+}
+
+.mCard span.vertical-left,
+.mCard span.vertical-right {
+  position: absolute;
+  width: 2px;                 /* border thickness */
+  height: 0;                  /* start collapsed at middle */
+  background: #818cf8;        /* border color */
+  top: 50%;                   /* start from middle vertically */
+  transition: height 0.5s ease;
+}
+
+.mCard span.vertical-left { left: 0; transform: translateY(-50%); }
+.mCard span.vertical-right { right: 0; transform: translateY(-50%); }
+
+/* Expand horizontal borders on hover */
+.mCard:hover::before,
+.mCard:hover::after {
+  width: 100%; /* grow outward from center */
+}
+
+.mCard:hover span.vertical-left,
+.mCard:hover span.vertical-right {
+  height: 110%; /* grow from middle to top/bottom */
+}
+
+.votes{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 65%;
+    right: 5%;
+    color: #656565;
+    background-color: white;
+    border: 2px solid #65a30d;
+    border-radius: 50%;
+}
+
+.css-1l5xwdx-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+  background-color: #818cf8 !important;
+  color: white;
+}
+
+.css-1l5xwdx-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected:hover {
+  background-color: #9fa8ff !important;
+}

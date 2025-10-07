@@ -27,7 +27,7 @@ export const MyBottomNav =()=> {
         showLabels
         value={value}
         onChange={handleChange}
-        sx={ { borderRadius:"5px",bgcolor:"#312e81", color:"white"}}
+        sx={ { borderRadius:"5px",bgcolor:"#818cf8", color:"white"}}
       >
         <BottomNavigationAction   label="Movies" icon={<MdMovie />} />
         <BottomNavigationAction  label="TV Series" icon={<IoTv />} />
