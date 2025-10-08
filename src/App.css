@@ -91,11 +91,17 @@
     border-radius: 50%;
 }
 
-.css-1l5xwdx-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
-  background-color: #818cf8 !important;
-  color: white;
-}
 
 .css-1l5xwdx-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected:hover {
   background-color: #9fa8ff !important;
+}
+
+.css-bwuu8s-MuiButtonBase-root-MuiChip-root:hover {
+  background-color: #9fa8ff !important;
+  transition: 0.2s ease;
+  scale: 1.1;
+}
+
+.css-mp6nmb-MuiButtonBase-root-MuiChip-root:hover {
+  background-color:  #9fa8ff !important;
 }

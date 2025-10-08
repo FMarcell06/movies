@@ -17,6 +17,7 @@ export const MyCard = ({
   release_date,
   vote_average,
 }) => {
+
   return (
     <Box sx={{ perspective: "3000px" }}>
       <Card
