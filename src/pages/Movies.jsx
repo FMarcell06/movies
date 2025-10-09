@@ -20,7 +20,7 @@ export const Movies = () => {
     
   }
   return (
-    <PageLayout title="Movies" page={page} setPage={setPage} type="movie" selectedGenres={selectedGenres} setSelectedGenres={setSelectedGenres}>
+    <PageLayout title="Movies" page={page} setPage={setPage} type="movie" selectedGenres={selectedGenres} setSelectedGenres={setSelectedGenres} data={data}>
       {isLoading && <MySpinner />}
       <Grid
         container

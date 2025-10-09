@@ -19,7 +19,7 @@ export const TVSeries = () => {
     data && console.log(data);
   }
   return (
-    <PageLayout title="Tv Series" page={page} setPage={setPage} type="tv" selectedGenres={selectedGenres} setSelectedGenres={setSelectedGenres}>
+    <PageLayout title="Tv Series" page={page} setPage={setPage} type="tv" selectedGenres={selectedGenres} setSelectedGenres={setSelectedGenres} data={data}>
       {isLoading && <MySpinner />}
       <Grid
         container
