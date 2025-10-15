@@ -26,7 +26,7 @@ export const TVSeries = () => {
         spacing={10}
         justifyContent="center"
    >
-        {data && data.results.map((obj) => <MyCard key={obj.id} {...obj} title={obj.name} release_date={obj.first_air_date} />)}
+        {data && data.results.map((obj) => <MyCard key={obj.id} {...obj} title={obj.name} type="tv" release_date={obj.first_air_date} />)}
       </Grid>
     </PageLayout>
   )

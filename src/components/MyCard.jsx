@@ -1,4 +1,4 @@
-import { img_300, img_500 } from "../utils";
+import { img_300, img_500, noImg } from "../utils";
 import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -8,16 +8,20 @@ import Button from "@mui/material/Button";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardActions from "@mui/material/CardActions";
 import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import { MyModal } from "./MyModal";
 
 export const MyCard = ({
+  id,
   backdrop_path,
   poster_path,
   title,
   overview,
   release_date,
   vote_average,
+  type,
 }) => {
-
+  const [open, setOpen] = React.useState(false);
   return (
     <Box sx={{ perspective: "3000px" }}>
       <Card
@@ -28,6 +32,7 @@ export const MyCard = ({
           boxShadow: 3,
           cursor: "pointer",
         }}
+        onClick={()=>setOpen(true)}
       >
         <span className="vertical-left"></span>
         <span className="vertical-right"></span>
@@ -35,7 +40,7 @@ export const MyCard = ({
           component="img"
           height="auto"
           width="auto"
-          image={img_500 + poster_path}
+          image={poster_path?img_500 + poster_path:noImg}
           alt={title}
           sx={{
             backgroundSize: "cover",
@@ -43,7 +48,7 @@ export const MyCard = ({
             backgroundRepeat: "no-repeat",
           }}
         />
-        <div className="votes">{Math.round(vote_average*10)/10}</div>
+        <div className="votes">{Math.round(vote_average * 10) / 10}</div>
         <CardContent sx={{}}>
           <Typography
             gutterBottom
@@ -58,6 +63,7 @@ export const MyCard = ({
           </Typography>
         </CardContent>
       </Card>
+      {open&&<MyModal id={id} type={type} backdrop_path={backdrop_path} release_date={release_date} noImg={noImg} title={title} open={open} setOpen={setOpen} overview={overview}/>}
     </Box>
   );
 };

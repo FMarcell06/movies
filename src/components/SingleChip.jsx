@@ -23,6 +23,7 @@ export const SingleChip=({id,name,selectedGenres,setSelectedGenres})=> {
         label={name}
         clickable
         onClick={handleClick}
+        className='singleChip'
         icon={isSelected?<GrRadialSelected color='white' />:<GrRadial />}
         sx={isSelected?{color:"white",background:"#818cf8"}:{color:"black",background:"#818cf8 "}}
         

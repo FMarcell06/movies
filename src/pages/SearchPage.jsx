@@ -40,20 +40,39 @@ export const SearchPage = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            gap:3,
+            gap: 3,
             flexDirection: "column",
-            marginBottom:2,
+            marginBottom: 2,
           }}
         >
-          <Box sx={{display:"flex",flexDirection:"row", gap:2}}>
+          <Box sx={{ display: "flex", flexDirection: "row", gap: 2 }}>
             <TextField
               id="outlined-controlled"
               label="Search"
               variant="outlined"
+              className="searchBar"
               inputRef={inputRef}
+              sx={{
+                "& label.Mui-focused": {
+                  color: "#818cf8", // alapértelmezett (nem fókuszált)
+                },
+                "& .MuiOutlinedInput-root": {
+                  "& fieldset": {
+                    borderColor: "#ccc", // alapértelmezett
+                  },
+                  "&:hover fieldset": {
+                    borderColor: "#818cf8", // hover
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: "#818cf8", // selected / fókuszban
+                  },
+                },
+              }}
             />{" "}
-            <Button className="searchBtn" onClick={() => setTxt(inputRef.current.value)
-            }>
+            <Button
+              className="searchBtn"
+              onClick={() => setTxt(inputRef.current.value)}
+            >
               <FaSearch size={40} />
             </Button>
           </Box>
@@ -68,13 +87,23 @@ export const SearchPage = () => {
             </Tabs>
           </Box>
         </Box>
-      <Grid
-        container
-        spacing={10}
-        justifyContent="center"
-   >
-        {data && data.results.map((obj) => value==0?<MyCard key={obj.id} {...obj} />:<MyCard key={obj.id} {...obj} title={obj.name} release_date={obj.first_air_date} />)}
-      </Grid>      </Grid>
+        <Grid container spacing={10} justifyContent="center">
+          {data &&
+            data.results.map((obj) =>
+              value == 0 ? (
+                <MyCard key={obj.id} {...obj} type="movie" />
+              ) : (
+                <MyCard
+                  key={obj.id}
+                  {...obj}
+                  title={obj.name}
+                  release_date={obj.first_air_date}
+                  type="tv"
+                />
+              )
+            )}
+        </Grid>{" "}
+      </Grid>
     </PageLayout>
   );
 };

@@ -4,13 +4,13 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.css-1scjuq2-MuiButtonBase-root-MuiBottomNavigationAction-root:hover{
+.bottomNavItem:hover{
   scale: 1.2 !important;
   transition: 0.3s;
   color: #cecdcd !important;
 }
 
-.css-1scjuq2-MuiButtonBase-root-MuiBottomNavigationAction-root.Mui-selected{
+.bottomNavItem.Mui-selected{
     color: white !important;
 }
 
@@ -97,29 +97,64 @@
     border-radius: 50%;
 }
 
-
-.css-1l5xwdx-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected:hover {
+.pgStyle.Mui-selected:hover{
   background-color: #9fa8ff !important;
 }
 
-.css-bwuu8s-MuiButtonBase-root-MuiChip-root:hover {
+.singleChip:hover {
   background-color: #9fa8ff !important;
   transition: 0.2s ease;
   scale: 1.1;
 }
 
-.css-mp6nmb-MuiButtonBase-root-MuiChip-root:hover {
-  background-color:  #9fa8ff !important;
+.searchBar{
+  --variant--outlinedBorder: #818cf8 !important;
 }
 
 .searchBtn{
-  color: #818cf8;
+  color: #818cf8 !important;
 }
 
-  .css-1uent87-MuiButtonBase-root-MuiButton-root:hover {
+.searchBtn:hover {
     --variant-containedBg: #1565c0;
     --variant-outlinedBorder: #1976d2;
     --variant-outlinedBg: rgba(25, 118, 210, 0.04);
+    color:#9fa8ff !important;
     scale: 1.2;
     transition: 0.2s;
   }
+
+button.slick-arrow::before{
+  color: #818cf8 !important;
+}
+
+button.slick-arrow:hover{
+  scale: 1.3!important; 
+  transition: 0.1s;
+}
+
+.carouselImg{
+  height: 100px;
+  border-radius: 5px;
+  margin: auto;
+  box-shadow: rgb(192, 188, 188) 5px 5px 5px 5px;
+  margin-bottom:  15px;
+}
+
+.carouselDiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 500px;
+  text-align: center;
+}
+
+.trailerBtn{
+  background-color: #818cf8 !important;
+}
+
+.trailerBtn:hover{
+  background-color: #9fa8ff !important;
+  scale: 1.05;
+  transition: 0.1s;
+}

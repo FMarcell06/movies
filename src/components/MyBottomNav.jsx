@@ -29,9 +29,9 @@ export const MyBottomNav =()=> {
         onChange={handleChange}
         sx={ { borderRadius:"5px",bgcolor:"#818cf8", color:"white"}}
       >
-        <BottomNavigationAction   label="Movies" icon={<MdMovie />} />
-        <BottomNavigationAction  label="TV Series" icon={<IoTv />} />
-        <BottomNavigationAction  label="Search" icon={<IoSearch />} />
+        <BottomNavigationAction className='bottomNavItem'   label="Movies" icon={<MdMovie />} />
+        <BottomNavigationAction className='bottomNavItem' label="TV Series" icon={<IoTv />} />
+        <BottomNavigationAction className='bottomNavItem'  label="Search" icon={<IoSearch />} />
       </BottomNavigation>
     </Box>
   );

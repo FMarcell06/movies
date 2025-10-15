@@ -27,7 +27,7 @@ export const Movies = () => {
         spacing={10}
         justifyContent="center"
    >
-        {data && data.results.map((obj) => <MyCard key={obj.id} {...obj} />)}
+        {data && data.results.map((obj) => <MyCard key={obj.id} {...obj} type="movie"/>)}
       </Grid>
     </PageLayout>
   );
