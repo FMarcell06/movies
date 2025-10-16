@@ -20,6 +20,7 @@ export const MyCard = ({
   release_date,
   vote_average,
   type,
+  genre_ids
 }) => {
   const [open, setOpen] = React.useState(false);
   return (
@@ -63,7 +64,7 @@ export const MyCard = ({
           </Typography>
         </CardContent>
       </Card>
-      {open&&<MyModal id={id} type={type} backdrop_path={backdrop_path} release_date={release_date} noImg={noImg} title={title} open={open} setOpen={setOpen} overview={overview}/>}
+      {open&&<MyModal id={id} type={type} backdrop_path={backdrop_path} release_date={release_date} noImg={noImg} title={title} open={open} setOpen={setOpen} genre_ids={genre_ids} overview={overview}/>}
     </Box>
   );
 };

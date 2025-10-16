@@ -4,6 +4,7 @@ import { useQueries, useQuery } from "react-query";
 const base_url="https://api.themoviedb.org/3/discover/"
 const urlGenres=`https://api.themoviedb.org/3/genre/`
 const urlSearch=`https://api.themoviedb.org/3/search/`
+const urlGenresList=`https://api.themoviedb.org/3/genre/movie/list?api_key=${import.meta.env.VITE_TMDB_API_KEY}`
 
 export const getData=async ({queryKey})=>{
     let url =base_url+queryKey[1]+"?api_key="+import.meta.env.VITE_TMDB_API_KEY+"&page="+queryKey[2]
@@ -32,7 +33,14 @@ export const img_300="https://image.tmdb.org/t/p/w300"
 export const img_500="https://image.tmdb.org/t/p/w500"
 export const noImg="https://www.movienewz.com/img/films/poster-holder.jpg"
 
+export const getGenresList = async()=>{
+    const resp = await axios.get(urlGenresList)
+    return resp.data
+}
+
 export const getDetailsData=async ({queryKey})=>{
+    console.log(queryKey[1]);
+    
     const resp = await axios.get(queryKey[1])
     return resp.data
 }

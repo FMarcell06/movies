@@ -7,6 +7,8 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { MyCarousel } from "./MyCarousel";
 import { ShowTrailer } from "./ShowTrailer";
+import { Genres } from "./Genres";
+import { GetGenres } from "./GetGenres";
 
 export const MyModal = ({
   open,
@@ -15,14 +17,16 @@ export const MyModal = ({
   type,
   backdrop_path,
   noImg,
-  title,
   overview,
-  release_date
+  release_date,
+  genre_ids,
 }) => {
-  const urlDetails = `https.//api.themoviedb.org/3/${type}/${id}?api_key=${
+  const urlDetails = `https//api.themoviedb.org/3/${type}/${id}?api_key=${
     import.meta.env.VITE_TMDB_API_KEY
   }`;
-  const { data, isLoading, isError, error } = useQuery({
+  console.log("url: ",urlDetails);
+  
+  const { data:modalData, isLoading, isError, error } = useQuery({
     queryKey: ["details", urlDetails],
     queryFn: getDetailsData,
   });
@@ -30,9 +34,11 @@ export const MyModal = ({
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  modalData&&console.log(modalData);
+  
   return (
     <Box>
-      <Modal
+      {/*<Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
@@ -79,18 +85,20 @@ export const MyModal = ({
               component="h2"
               fontWeight="bold"
             >
-              {title} <span > {`(${release_date})`}</span>
+              {data&&data?.name||data?.title} <span > {`(${release_date})`}</span>
             </Typography>
             <Typography id="modal-modal-description" color="#d1d5db" sx={{ mt: 2 }}>
               {overview}
             </Typography>
+            <GetGenres genre_ids={genre_ids}/>
           </Box>
           <Box sx={{ padding: "10px", margin: "10px", maxWidth:"100%"}}>
             {<MyCarousel id={id} type={type} />}
           </Box>
           <ShowTrailer id={id} type={type} />
         </Box>
-      </Modal>
+      </Modal>*/}
+      oke
     </Box>
   );
 };

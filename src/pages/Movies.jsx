@@ -16,7 +16,7 @@ export const Movies = () => {
   });
   
   {
-    data && console.log(data);
+    data&&console.log(data);
     
   }
   return (
